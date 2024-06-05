@@ -1,25 +1,32 @@
-<!DOCTYPE HTML>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"content="width=device-width, initial-scale 1.0">
-<title>Calculadora de Bhaskara</title>
+   <meta charset="UTF-8">
+   <title>Impar e par</title>
   </head>
- 
-<body>    
-    <script> 
-      var nome= window.prompt ("qual é o seu nome?")
-      var quantidadeletras= nome.length
-      document.write ("Olá, seu nome tem"+quantidadeLetras+"letras.")
-      var A= number window.prompt ("Insira o valor de A")
-      var B= number window.prompt ("Insira o valor de B")
-      var C= number window.prompt ("Insira o valor de C")
-      var Del= B*B-4*A*C
-      var Bask1= -B+Del*1/2
-      var Bask2= Bask1÷2**A
-      var Bask3= -B-Del*1/2
-      var Bask4= Bask2÷2**A
-      window.alert('o resultado é X1:' +Bask2 'X2:' +Bask4
-    </script>
-  </body>
+<body>
+  <h1>Atividade</h1>
+  <p>Digite um valor, caso ele seja impar será somado 10, caso seja par será subtraido 10</p>
+<p>Digite um número:</p>
+<input type="text" id="numero">
+<button onclick="calcular()">Calcular</button>
+<p id="resultado"></p>
+</body>
+<script>
+function calcular() {
+    var valor = document.getElementById('numero').value;
+    valor = parseInt(valor);
+
+    if (valor) {
+      var resultado;
+        if (valor % 2 === 0) {
+            resultado = valor - 10;
+        } else {
+            resultado = valor + 10;
+        }
+        document.getElementById('resultado').textContent = "O resultado é: " + resultado;
+    }
+}
+</script>
+</body>
 </html>
