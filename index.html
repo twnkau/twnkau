@@ -1,32 +1,39 @@
 <!DOCTYPE html>
-<html lang="pt">
-  <head>
-   <meta charset="UTF-8">
-   <title>Impar e par</title>
-  </head>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nome e Nacionalidade</title>
+</head>
 <body>
-  <h1>Atividade</h1>
-  <p>Digite um valor, caso ele seja impar será somado 10, caso seja par será subtraido 10</p>
-<p>Digite um número:</p>
-<input type="text" id="numero">
-<button onclick="calcular()">Calcular</button>
-<p id="resultado"></p>
-</body>
-<script>
-function calcular() {
-    var valor = document.getElementById('numero').value;
-    valor = parseInt(valor);
+    <h1>Nome e Nacionalidade</h1>
+    
+    <p>Digite seu nome:</p>
+    <input type="text" id="nome">
+    <br>
+    
+    <p>Digite seu país:</p>
+    <input type="text" id="pais">
+    <br>
+    
+    <button onclick="calcular()">Enviar</button>
+    
+    <p id="resultado"></p>
 
-    if (valor) {
-      var resultado;
-        if (valor % 2 === 0) {
-            resultado = valor - 10;
-        } else {
-            resultado = valor + 10;
+    <script>
+        function calcular() {
+            var nome = document.getElementById('nome').value.trim();
+            var pais = document.getElementById('pais').value.trim().toLowerCase();
+            var resultadoDiv = document.getElementById('resultado');
+            
+            if (nome && pais) {
+                if (pais === 'brasil' || pais === 'brazil') {
+                    resultadoDiv.textContent = "Seu nome é: " + nome + " e você é brasileiro(a).";
+                } else {
+                    resultadoDiv.textContent = "Seu nome é: " + nome + " e você é estrangeiro(a).";
+                }
+            } 
         }
-        document.getElementById('resultado').textContent = "O resultado é: " + resultado;
-    }
-}
-</script>
+    </script>
 </body>
 </html>
